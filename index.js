@@ -92,24 +92,22 @@ function next() {
 }
 
 function dogruMU() {
-  if (kullaniciKumesi.length === sayilarKumesi.length) {
+  if (kullaniciKumesi.length == sayilarKumesi.length) {
     for (let i = 0; i < kullaniciKumesi.length; i++) {
-      if (kullaniciKumesi[i] === sayilarKumesi[i]) {
+      if (kullaniciKumesi[i] == sayilarKumesi[i]) {
       } else {
         var sesYanlis = new Audio("sounds/wrong.mp3");
         sesYanlis.play();
-        isTrue = false;
+        isTrue=false;
         $("body").addClass("game-over");
-        $("#level-title").text("GAME OVER! PRESS ANY KEY TO PLAY AGAIN!");
+        $("#level-title").text("GAME OVER! PRESS ANY KEY");
       }
     }
-    if (isTrue) {
-      setTimeout(function () {
-        next();
-      }, 1000);
-      levelNo++;
-      $("#level-title").text("Level " + levelNo);
-      kullaniciKumesi = [];
-    }
+    setTimeout(function () {
+      next();
+    }, 1000);
+    levelNo++;
+    $("#level-title").text("Level " + levelNo);
+    kullaniciKumesi = [];
   }
 }
